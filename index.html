@@ -210,7 +210,6 @@
   <header>
     <div class="nav">
       <div class="logo">
-        <!-- Espacio para LOGO -->
         <img src="https://via.placeholder.com/100x40?text=LOGO" alt="Logo" />
         <strong>Sistema de Bienestar</strong>
       </div>
@@ -225,4 +224,85 @@
         <p class="subtitle">
           Descubre un sistema natural con biocristales para el descanso, bienestar y alivio del estrés, mientras generas ingresos compartiendo salud y bienestar.
         </p>
-        <a href="#contacto" class="btn"
+        <a href="#contacto" class="btn">Quiero más información</a>
+      </div>
+      <div class="card">
+        <h3>🎬 Video de Presentación</h3>
+        <iframe src="https://www.youtube.com/embed/kk7nsjGcp-k?pp=0gcJCR4Bo7VqN5tD" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Sección de información -->
+    <section class="container card">
+      <div class="sections">
+        <div class="info-block">
+          <img src="https://images.unsplash.com/photo-1588776814546-3b062aabf7b6?auto=format&fit=crop&w=800&q=80" alt="Estrés y vida moderna">
+          <h3 class="section-title">⚠️ El Problema</h3>
+          <p class="section-text">La desconexión con la naturaleza y el estrés constante afectan nuestra energía, sueño y bienestar diario.</p>
+        </div>
+        <div class="info-block">
+          <img src="https://images.unsplash.com/photo-1612831662375-eaa69a6e1b58?auto=format&fit=crop&w=800&q=80" alt="Conexión a la Tierra">
+          <h3 class="section-title">🌿 Conexión a la Tierra</h3>
+          <p class="section-text">Reconéctate con la energía natural del planeta y recupera equilibrio, vitalidad y calma interior.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de solución -->
+    <section class="container card">
+      <div class="sections">
+        <div class="info-block">
+          <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80" alt="Solución natural">
+          <h3 class="section-title">✨ La Solución</h3>
+          <p class="section-text">Los productos con biocristales ayudan a equilibrar el cuerpo, mejorar la postura y reducir la tensión mientras descansas.</p>
+        </div>
+        <div class="info-block">
+          <img src="https://images.unsplash.com/photo-1609941791379-28c21bcb9c7c?auto=format&fit=crop&w=800&q=80" alt="Sistema integral">
+          <h3 class="section-title">⚙️ Cómo Funciona</h3>
+          <p class="section-text">La tecnología natural de biocristales potencia el bienestar físico, mental y emocional para tu crecimiento personal y financiero.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario de WhatsApp -->
+    <section id="contacto" class="container card" style="text-align:center;">
+      <h3>📩 Contáctanos por WhatsApp</h3>
+      <p class="section-text">Completa el formulario y serás redirigido automáticamente a WhatsApp.</p>
+      <form id="whatsappForm">
+        <input type="text" id="nombre" placeholder="Tu nombre" required />
+        <textarea id="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+        <button type="submit" class="btn">Enviar por WhatsApp</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>⚠️ Este sitio tiene fines informativos y educativos. No sustituye el consejo de un profesional de salud.</p>
+      <p>
+        <a href="https://www.canva.com/design/DAGsJ_Nb_U8/T-RDPfYpr3x8Fwy1t9mGnA/edit?utm_content=DAGsJ_Nb_U8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Términos y Condiciones</a> |
+        <a href="https://www.canva.com/design/DAG1w9SgOPo/AdK9NpSCVReqGDc9sKqykg/view?utm_content=DAG1w9SgOPo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h85cc63194d" target="_blank">Política de Privacidad</a>
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    // Animación suave al hacer scroll
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(card => observer.observe(card));
+
+    // Formulario WhatsApp automático
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nombre = encodeURIComponent(document.getElementById('nombre').value);
+      const mensaje = encodeURIComponent(document.getElementById('mensaje').value);
+      const numero = "13232850508";
+      const url = `https://wa.me/${numero}?text=Hola!%20Soy%20${nombre}.%20${mensaje}`;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>
